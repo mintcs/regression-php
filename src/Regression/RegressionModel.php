@@ -33,6 +33,16 @@ class RegressionModel
     /**
      * @var string
      */
+    private $power;
+
+    /**
+     * @var string
+     */
+    private $coefficient;
+
+    /**
+     * @var string
+     */
     private $createDate;
 
     /**
@@ -81,6 +91,38 @@ class RegressionModel
     public function setSourceSequence(array $sourceSequence)
     {
         $this->sourceSequence = $sourceSequence;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCoefficient()
+    {
+        return $this->coefficient;
+    }
+
+    /**
+     * @param string $coefficient
+     */
+    public function setCoefficient($coefficient)
+    {
+        $this->coefficient = $coefficient;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPower()
+    {
+        return $this->power;
+    }
+
+    /**
+     * @param string $power
+     */
+    public function setPower($power)
+    {
+        $this->power = $power;
     }
 
     /**

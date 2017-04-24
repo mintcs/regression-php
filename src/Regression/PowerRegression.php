@@ -54,7 +54,9 @@ class PowerRegression extends AbstractRegression implements InterfaceRegression
             $this->resultSequence[] = $coordinate;
         }
 
-        $this->equation = sprintf('y = %s + x^%s', round($A, 2), round($B, 2));
+        $this->coefficient = sprintf('%s', round($A, 3));
+        $this->power = sprintf('%s', round($B, 3));
+        $this->equation = sprintf('y = %s + x^%s', round($A, 2), round($B, 3));
 
         $this->push();
     }

@@ -24,6 +24,16 @@ abstract class AbstractRegression implements InterfaceRegression
     protected $equation;
 
     /**
+     * @var string
+     */
+    protected $power;
+
+    /**
+     * @var string
+     */
+    protected $coefficient;
+
+    /**
      * @var array
      */
     protected $resultSequence;
@@ -48,6 +58,8 @@ abstract class AbstractRegression implements InterfaceRegression
     protected function push()
     {
         $this->regressionModel = new RegressionModel();
+        $this->regressionModel->setCoefficient($this->coefficient);
+        $this->regressionModel->setPower($this->power);
         $this->regressionModel->setEquation($this->equation);
         $this->regressionModel->setObjectId(bin2hex(random_bytes(10)));
         $this->regressionModel->setResultSequence($this->resultSequence);
@@ -61,6 +73,22 @@ abstract class AbstractRegression implements InterfaceRegression
     public function setSourceSequence(array $data)
     {
         $this->sourceSequence = $data;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPower()
+    {
+        return $this->power;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCoefficient()
+    {
+        return $this->coefficient;
     }
 
     /**
